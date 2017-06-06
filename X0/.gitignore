@@ -3,5 +3,5 @@
 src/main/resources/
 target/generated-sources/
 target/generated-test-sources/
-.idea
+.idea/*
 *.iml
