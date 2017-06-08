@@ -1,4 +1,4 @@
-package dao;
+package com.codecool.bank.dao;
 
 import org.junit.jupiter.api.*;
 import java.sql.DatabaseMetaData;

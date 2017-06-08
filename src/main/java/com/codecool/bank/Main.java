@@ -1,3 +1,5 @@
+package com.codecool.bank;
+
 import java.sql.SQLException;
 
 public class Main {

@@ -1,0 +1,9 @@
+DROP TABLE 'Customers';
+DROP TABLE 'Accounts';
+DROP TABLE 'Cards';
+DROP TABLE 'Transactions';
+DROP TABLE 'TransactionTypes';
+DROP TABLE 'CardsTypes';
+DROP TABLE 'TransactionStatuses';
+DROP TABLE 'AccountTypes';
+DROP TABLE 'AccountStatuses';

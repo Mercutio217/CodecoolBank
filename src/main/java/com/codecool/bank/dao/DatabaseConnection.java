@@ -1,9 +1,7 @@
-package dao;
+package com.codecool.bank.dao;
 
-import utils.FileReader;
+import com.codecool.bank.utils.FileReader;
 import java.sql.*;
-import org.sqlite.JDBC;
-
 
 
 public final class DatabaseConnection {

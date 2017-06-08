@@ -1,4 +1,4 @@
-package model;
+package com.codecool.bank.model;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.util.Date;
 public class Card {
 
     private BigInteger cardNumber;
-    privagite Date validity;
+    private Date validity;
     private BigInteger buyingLimit;
     private BigInteger cashWithdrawalLimit;
     private BigInteger limit;
