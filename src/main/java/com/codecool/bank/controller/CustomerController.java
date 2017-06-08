@@ -20,7 +20,7 @@ public class CustomerController {
         dao.addOrUpdate(cust);
     }
 
-    public void deactivareCustomer(Integer customerId) throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
+    public void deactivateCustomer(Integer customerId) throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
         dao.findById(1);
     }
 }
