@@ -1,4 +1,6 @@
-import dao.DatabaseConnection;
+package com.codecool.bank;
+
+import com.codecool.bank.dao.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;

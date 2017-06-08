@@ -1,4 +1,4 @@
-package model;
+package com.codecool.bank.model;
 
 /**
  * Created by mercutio on 07.06.17.

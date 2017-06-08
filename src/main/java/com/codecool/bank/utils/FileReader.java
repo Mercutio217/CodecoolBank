@@ -1,4 +1,4 @@
-package utils;
+package com.codecool.bank.utils;
 
 import java.io.*;
 import java.util.stream.Collectors;
