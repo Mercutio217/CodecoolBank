@@ -7,7 +7,7 @@ INSERT INTO 'Customers' ("FirstName", LastName, Login, Password, CreateDate, IsA
 
 INSERT INTO 'Accounts' (CustomerId, Number, AccountTypeId, AccountStatusID, OpenDate, Balance, DebitLine, Interest) VALUES
   (1, '785934759384y6703449873209', 1, 1, '17-01-2016', 17876, '20000000', '05'),
-  (1, 'AZ70 MYDP NWNB 2WI1 NQQX SRVG FFDJ', 2, 1, '4-24-1978', 12344, '96924468', '11'),
+  (1, 'AZ70 MYDP NWNB 2WI1 NQQX SRVG FFDJ', 1, 1, '4-24-1978', 12344, '96924468', '11'),
   (2, 'AT51 3944 2533 8547 1133', 2, 1, '2-13-1932', 19312657, '12455', '9'),
   (3, 'EE43 6313 0808 2924 9010', 2, 1, '3-7-1954', 17153630, '124535', '11'),
   (4, 'FR38 5023 1414 35AI RKET BQCC G97', 2, 2, '6-30-2005', 3544, '6894377', '14'),

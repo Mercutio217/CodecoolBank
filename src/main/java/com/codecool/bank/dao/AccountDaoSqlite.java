@@ -78,4 +78,8 @@ public class AccountDaoSqlite {
                 rs.getString("Description")
         );
     }
+
+    public static void main(String[] args) throws ParseException, InvalidAccountTypeException, SQLException {
+
+    }
 }

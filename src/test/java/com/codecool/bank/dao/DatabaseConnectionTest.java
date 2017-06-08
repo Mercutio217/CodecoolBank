@@ -59,7 +59,7 @@ class DatabaseConnectionTest {
 
         @Test
         public void testMigrateDBCreateDBFile() throws SQLException {
-            dbConnector = new DatabaseConnection("jdbc:sqlite:src/test/java/test_database.db");
+            dbConnector = new DatabaseConnection("jdbc:sqlite:src/main/resources/database/codecool-bank.db");
             dbConnector.openConnection();
             dbConnector.migrateDb();
             List<String> tablesName = new ArrayList<>();

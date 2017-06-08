@@ -24,4 +24,12 @@ public abstract class AbstractAccount {
     public Integer getId() {
         return id;
     }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public Integer getInterest() {
+        return interest;
+    }
 }
