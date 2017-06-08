@@ -3,5 +3,8 @@ package model;
 /**
  * Created by mercutio on 07.06.17.
  */
-public enum TransactionStatus {
+public class TransactionStatus extends Details {
+    public TransactionStatus(Integer id, String name, String description) {
+        super(id, name, description);
+    }
 }

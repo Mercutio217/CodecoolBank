@@ -3,5 +3,8 @@ package model;
 /**
  * Created by mercutio on 07.06.17.
  */
-public enum TransactionType {
+public class TransactionType extends Details {
+    public TransactionType(Integer id, String name, String description) {
+        super(id, name, description);
+    }
 }

@@ -1,7 +1,12 @@
 package model;
 
 /**
- * Created by mercutio on 06.06.17.
+ * Created by mercutio on 08.06.17.
  */
-public class Account {
+public interface Account {
+
+    void deposit(long amount);
+    void withdraw(long amount);
+    long getBalance();
+    int getId();
 }
