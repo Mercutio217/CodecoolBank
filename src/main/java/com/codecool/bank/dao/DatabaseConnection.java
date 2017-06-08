@@ -19,23 +19,23 @@ public final class DatabaseConnection {
         System.out.println("Connection established...");
     }
 
-//    public void resetDatabase() throws SQLException {
-//        String[] dropTables= reader.getStringFromFile("/sqls/dropTables.sql").split(";");
-//        String[] createTables= reader.getStringFromFile("/sqls/createTables.sql").split(";");
-//        String[] insertData = reader.getStringFromFile("/sqls/insertData.sql").split(";");
-//        String[][] queries = {dropTables, createTables, insertData};
-//        String[] infos = {"Dropping Tables...", "Creating Tables...", "Inserting data..."};
-//        Statement statement = connection.createStatement();
-//        System.out.println("Resetting database...");
-//        for (int i = 0; i<queries.length; i++) {
-//            System.out.println(infos[i]);
-//            for (String query: queries[i])
-//                if (!query.trim().equals("")) {
-//                    statement.executeUpdate(query);
-//                }
-//        }
-//        System.out.println("DONE!");
-//    }
+    public void resetDatabase() throws SQLException {
+        String[] dropTables= reader.getStringFromFile("sqls/dropTables.sql").split(";");
+        String[] createTables= reader.getStringFromFile("sqls/createTables.sql").split(";");
+        String[] insertData = reader.getStringFromFile("sqls/insertData.sql").split(";");
+        String[][] queries = {dropTables, createTables, insertData};
+        String[] infos = {"Dropping Tables...", "Creating Tables...", "Inserting data..."};
+        Statement statement = connection.createStatement();
+        System.out.println("Resetting database...");
+        for (int i = 0; i<queries.length; i++) {
+            System.out.println(infos[i]);
+            for (String query: queries[i])
+                if (!query.trim().equals("")) {
+                    statement.executeUpdate(query);
+                }
+        }
+        System.out.println("DONE!");
+    }
 
     public void migrateDb() throws SQLException {
         String[] createTables= reader.getStringFromFile("sqls/createTables.sql").split(";");
