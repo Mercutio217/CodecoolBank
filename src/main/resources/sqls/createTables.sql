@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS `Customers` (
     `id`    INTEGER PRIMARY KEY AUTOINCREMENT,
-    `FirstName `    TEXT NOT NULL,
+    `FirstName`    TEXT NOT NULL,
     `LastName`    TEXT NOT NULL,
-    `Login`    INTEGER NOT NULL,
+    `Login`    TEXT NOT NULL,
     `Password`    INTEGER NOT NULL,
     `CreateDate`    TEXT NOT NULL,
     `IsActive`    INTEGER NOT NULL,
-    `LastLogin`    INTEGER
+    `LastLogin`    TEXT
 );
 
 CREATE TABLE IF NOT EXISTS  `Accounts` (
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS  `Accounts` (
     `CustomerId`    INTEGER NOT NULL,
     `Number`    TEXT NOT NULL,
     `AccountTypeId`    INTEGER NOT NULL,
-    `AccountStatusID`    INTEGER NOT NULL,
+    `AccountStatusId`    INTEGER NOT NULL,
     `OpenDate`    TEXT NOT NULL,
     `Balance`    INTEGER NOT NULL,
     `DebitLine`    INTEGER,
@@ -68,7 +68,7 @@ CREATE TABLE  IF NOT EXISTS  `AccountTypes` (
 );
 
 CREATE TABLE IF NOT EXISTS  `AccountStatuses` (
-    `CardTypeId`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    `AccountStatusId`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     `Name`    TEXT NOT NULL,
     `Description`    TEXT
 );

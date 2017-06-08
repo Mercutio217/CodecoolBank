@@ -25,9 +25,9 @@ public class App {
         return dbcon.getConnection();
     }
 
-//    public void resetDb() throws SQLException {
-//        dbcon.resetDatabase();
-//    }
+    public void resetDb() throws SQLException {
+        dbcon.resetDatabase();
+    }
 
     public void migrateDb() throws SQLException {
         dbcon.migrateDb();
