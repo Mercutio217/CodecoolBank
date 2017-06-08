@@ -29,4 +29,8 @@ public class Card {
         this.accountId = accountId;
         this.cardStatus = cardStatus;
     }
+
+    public String getNumber() {
+        return number;
+    }
 }

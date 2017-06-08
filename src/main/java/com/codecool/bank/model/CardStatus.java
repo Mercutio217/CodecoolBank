@@ -7,4 +7,6 @@ public class CardStatus extends Details {
     public CardStatus(Integer id, String name, String description) {
         super(id, name, description);
     }
+
 }
+

@@ -42,13 +42,17 @@ class CustomerDaoSqliteTest {
         assertThrows(InvalidCredentialsException.class, () -> testDao.login("jpasdawien", "tfoja stara"));
     }
 
+    @Test
+    void testFindByIdThrowsException() throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
+        assertThrows(Exception.class, () -> testDao.findById(1));
+
+    }
+
     @Nested
     class InstatiatedTest {
 
         @BeforeEach
         void nestedSetUp() throws SQLException {
-            App.run();
-            App.getApp().setConnection("jdbc:sqlite:src/main/resources/database/codecool-bank.db");
             App.getApp().resetDb();
         }
 
@@ -67,6 +71,7 @@ class CustomerDaoSqliteTest {
         }
 
         @Test
+        @Disabled
         void testUpdate() throws SQLException {
             Date newDate = new Date();
             Customer customer = new Customer(1, "Janusz", "Marcinkowski", new Date(), true, newDate);
@@ -74,14 +79,10 @@ class CustomerDaoSqliteTest {
             PreparedStatement preparedStatement =
                     App.getApp().getConnection().prepareStatement("SELECT * FROM `Customers` WHERE id = 1;");
             ResultSet set = preparedStatement.executeQuery();
-            String today = new SimpleDateFormat("DD-MM-YYYY").format(Calendar.getInstance().getTime());
+            String today = new SimpleDateFormat("DD-MM-YYYY").format(new Date());
             assertEquals(today, set.getString("LastLogin"));
         }
 
-        @Test
-        void testFindByIdThrowsException() throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
-            assertThrows(Exception.class, () -> testDao.findById(1));
 
-        }
     }
 }
