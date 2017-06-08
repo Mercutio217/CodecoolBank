@@ -1,5 +1,6 @@
 package com.codecool.bank.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -35,6 +36,7 @@ public class Customer {
         this.isActive = isActive;
         this.createDate = createDate;
         this.lastLogin = lastLogin;
+        this.accounts = new ArrayList<>();
     }
 
     public List<AbstractAccount> getAccounts() {
@@ -43,10 +45,6 @@ public class Customer {
 
     public void setAccounts(List<AbstractAccount> accounts) {
         this.accounts = accounts;
-    }
-
-    public AbstractAccount getAccount(Integer accountId){
-        return accounts.stream().filter(account -> Objects.equals(account.getId(), accountId)).findFirst().orElse(null);
     }
 
     public Integer getId() {
@@ -79,10 +77,6 @@ public class Customer {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
     }
 
     public void setLastLogin(Date lastLogin) {
