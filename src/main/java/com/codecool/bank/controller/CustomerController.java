@@ -3,6 +3,7 @@ package com.codecool.bank.controller;
 import com.codecool.bank.dao.CustomerDaoSqlite;
 import com.codecool.bank.dao.CustomerNotFoundException;
 import com.codecool.bank.dao.InvalidAccountTypeException;
+import com.codecool.bank.dao.InvalidCredentialsException;
 import com.codecool.bank.model.Customer;
 
 import java.sql.SQLException;
@@ -20,7 +21,20 @@ public class CustomerController {
         dao.addOrUpdate(cust);
     }
 
-    public void deactivareCustomer(Integer customerId) throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
-        dao.findById(1);
+    public void deactivateCustomer(Integer customerId) throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
+       Customer customer = dao.findById(customerId);
+       customer.setActive(false);
+       dao.addOrUpdate(customer);
     }
+
+    public String login(String login, String password) throws SQLException, InvalidAccountTypeException, InvalidCredentialsException, ParseException {
+        Customer customer = dao.login(login, password);
+        return "Successfully logged in as " + customer.getFirstName() + " " + customer.getLastName();
+    }
+
+
+
+
+
+
 }
