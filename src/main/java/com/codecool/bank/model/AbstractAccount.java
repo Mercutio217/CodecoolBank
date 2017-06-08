@@ -28,8 +28,4 @@ public abstract class AbstractAccount {
     public String getNumber() {
         return number;
     }
-
-    public Integer getInterest() {
-        return interest;
-    }
 }

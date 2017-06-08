@@ -42,13 +42,17 @@ class CustomerDaoSqliteTest {
         assertThrows(InvalidCredentialsException.class, () -> testDao.login("jpasdawien", "tfoja stara"));
     }
 
+    @Test
+    void testFindByIdThrowsException() throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
+        assertThrows(Exception.class, () -> testDao.findById(1));
+
+    }
+
     @Nested
     class InstatiatedTest {
 
         @BeforeEach
         void nestedSetUp() throws SQLException {
-            App.run();
-            App.getApp().setConnection("jdbc:sqlite:src/main/resources/database/codecool-bank.db");
             App.getApp().resetDb();
         }
 
@@ -79,10 +83,6 @@ class CustomerDaoSqliteTest {
             assertEquals(today, set.getString("LastLogin"));
         }
 
-        @Test
-        void testFindByIdThrowsException() throws SQLException, ParseException, InvalidAccountTypeException, CustomerNotFoundException {
-            assertThrows(Exception.class, () -> testDao.findById(1));
 
-        }
     }
 }
