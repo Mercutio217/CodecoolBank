@@ -34,7 +34,6 @@ public class CustomerDaoSqlite {
         cus.setLastLogin(new Date());
         addOrUpdate(cus);
         return cus;
-
     }
 
     private Customer customerFromResultSet(ResultSet rs) throws SQLException, ParseException, InvalidAccountTypeException {
@@ -82,7 +81,7 @@ public class CustomerDaoSqlite {
         preparedStatement.executeUpdate();
     }
 
-    public void findById(Integer id) throws SQLException, CustomerNotFoundException, ParseException, InvalidAccountTypeException {
+    public Customer findById(Integer id) throws SQLException, CustomerNotFoundException, ParseException, InvalidAccountTypeException {
         PreparedStatement stat = con.prepareStatement(
                 "SELECT * FROM `Customers` WHERE id = ?");
         stat.setInt(1,id);
@@ -92,6 +91,6 @@ public class CustomerDaoSqlite {
             throw new CustomerNotFoundException("Customer not found");
         }
 
-        customerFromResultSet(rs);
+        return customerFromResultSet(rs);
     }
 }

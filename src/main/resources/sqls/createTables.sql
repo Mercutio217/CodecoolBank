@@ -41,8 +41,9 @@ CREATE TABLE IF NOT EXISTS  `Transactions` (
     `Value`    INTEGER NOT NULL,
     `Description`    TEXT NOT NULL,
     `TransactionStatusId`    INTEGER NOT NULL,
-    `AccountId`    TEXT NOT NULL,
-    `CardId`    INTEGER
+    `SourceAccountId`    TEXT NOT NULL,
+    `SourceCardId`    INTEGER,
+    `DestinationAccountId` INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS  `TransactionTypes` (

@@ -82,4 +82,8 @@ public class Customer {
     public void setLastLogin(Date lastLogin) {
         this.lastLogin = lastLogin;
     }
+
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
 }

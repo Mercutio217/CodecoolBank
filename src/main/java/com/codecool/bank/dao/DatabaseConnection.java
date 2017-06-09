@@ -19,14 +19,22 @@ public final class DatabaseConnection {
         System.out.println("Connection established...");
     }
 
+    public void dropTables() throws SQLException {
+        String dropTables = reader.getStringFromFile("sqls/dropTables.sql");
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(dropTables);
+
+    }
+
     public void resetDatabase() throws SQLException {
-        String[] dropTables= reader.getStringFromFile("sqls/dropTables.sql").split(";");
         String[] createTables= reader.getStringFromFile("sqls/createTables.sql").split(";");
         String[] insertData = reader.getStringFromFile("sqls/insertData.sql").split(";");
-        String[][] queries = {dropTables, createTables, insertData};
-        String[] infos = {"Dropping Tables...", "Creating Tables...", "Inserting data..."};
+        String[][] queries = {createTables, insertData};
+        String[] infos = {"Creating Tables...", "Inserting data..."};
         Statement statement = connection.createStatement();
         System.out.println("Resetting database...");
+        System.out.println("Dropping tables...");
+        dropTables();
         for (int i = 0; i<queries.length; i++) {
             System.out.println(infos[i]);
             for (String query: queries[i])
