@@ -28,4 +28,44 @@ public abstract class AbstractAccount {
     public String getNumber() {
         return number;
     }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public AccountStatus getAccountStatus() {
+        return accountStatus;
+    }
+
+    public Date getOpenDate() {
+        return openDate;
+    }
+
+    public Long getBalance() {
+        return balance;
+    }
+
+    public Long getDebitLine() {
+        return debitLine;
+    }
+
+    public Integer getInterest() {
+        return interest;
+    }
+
+    public void setBalance(Long balance) {
+        this.balance = balance;
+    }
+
+    public void setDebitLine(Long debitLine) {
+        this.debitLine = debitLine;
+    }
+
+    public void setInterest(Integer interest) {
+        this.interest = interest;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
 }

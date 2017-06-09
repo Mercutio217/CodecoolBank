@@ -12,16 +12,16 @@ import static org.mockito.Mockito.mock;
  */
 class TransactionTest {
     Transaction transaction;
-    @Test
-    void testConstructor() {
-        TransactionType transactionType = mock(TransactionType.class);
-        TransactionStatus transactionStatus = mock(TransactionStatus.class);
-        CreditAccount creditAccount = mock(CreditAccount.class);
-        Card mockCard = mock(Card.class);
-        transaction = new Transaction(2, new Date(),
-                transactionType, 23124L, "DUPA", transactionStatus, creditAccount, mockCard);
-// This test is a joke
-        assertEquals(Transaction.class, transaction.getClass());
-    }
+//    @Test
+//    void testConstructor() {
+//        TransactionType transactionType = mock(TransactionType.class);
+//        TransactionStatus transactionStatus = mock(TransactionStatus.class);
+//        CreditAccount creditAccount = mock(CreditAccount.class);
+//        Card mockCard = mock(Card.class);
+//        transaction = new Transaction(2, new Date(),
+//                transactionType, 23124L, "DUPA", transactionStatus, creditAccount, mockCard);
+//// This test is a joke
+//        assertEquals(Transaction.class, transaction.getClass());
+//    }
 
 }

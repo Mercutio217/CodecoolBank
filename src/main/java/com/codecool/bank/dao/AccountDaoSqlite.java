@@ -78,4 +78,29 @@ public class AccountDaoSqlite {
                 rs.getString("Description")
         );
     }
+
+    void addAccount(AbstractAccount account) throws SQLException {
+        Connection connection = App.getApp().getConnection();
+        PreparedStatement insertStatement =
+                connection.prepareStatement("INSERT INTO 'Accounts' ('CustomerId', 'Number', '" +
+                        "AccountTypeId', 'AccountStatusId', 'OpenDate', 'Balance', 'DebitLine', 'Interest')" +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        insertStatement.setInt(1, account.getCustomerId());
+        insertStatement.setString(2, account.getNumber());
+        if (account.getClass().equals(CreditAccount.class)) {
+            insertStatement.setInt(3, 2);
+        } else {
+            insertStatement.setInt(3, 1);
+        }
+        insertStatement.setInt(4, account.getAccountStatus().getId());
+        insertStatement.setString(5, this.df.format(account.getOpenDate()));
+        insertStatement.setLong(6, account.getBalance());
+        insertStatement.setLong(7, account.getDebitLine());
+        insertStatement.setInt(8, account.getInterest());
+        insertStatement.executeUpdate();
+
+
+
+
+    }
 }

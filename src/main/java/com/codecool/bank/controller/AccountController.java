@@ -1,6 +1,7 @@
 package com.codecool.bank.controller;
 
 import com.codecool.bank.dao.AccountDaoSqlite;
+import com.codecool.bank.model.AbstractAccount;
 
 import java.sql.Connection;
 
@@ -14,7 +15,7 @@ public class AccountController {
         dao = new AccountDaoSqlite();
     }
 
-    public void addAccount(Integer customerId) {
+    public void addAccount(Integer customerId, AbstractAccount acc) {
 
     }
 }

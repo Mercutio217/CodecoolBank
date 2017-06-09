@@ -10,4 +10,5 @@ public class CreditAccount extends AbstractAccount{
         super(id, customerId, number, accountStatus, openDate, balance, debitLine, Interest);
         this.type = type;
     }
+
 }

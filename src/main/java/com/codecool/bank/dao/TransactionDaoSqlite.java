@@ -22,7 +22,7 @@ public class TransactionDaoSqlite {
                 "TransactionTypeId, `Value`, Description, TransactionStatusId, SourceAccountId, DestinationAccountId) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement stat = con.prepareStatement(insertQuery);
-        stat.setString(1, df.format(transaction.getDateOfTransaction());
+        stat.setString(1, df.format(transaction.getDateOfTransaction()));
         stat.setInt(2,transaction.getTransactionType().getId());
         stat.setLong(3, transaction.getValue());
         stat.setString(4, transaction.getDescription());
